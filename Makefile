@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anpicard <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/06 11:02:30 by anpicard          #+#    #+#              #
-#    Updated: 2024/11/14 11:57:03 by anpicard         ###   ########.fr        #
+#    Updated: 2024/11/14 12:29:08 by anpicard         #+#    #+#              #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = libftprintf.a
 LIBFT_DIR = inc/libft
 FT_PRINTF_DIR = src
 
-# Sources de libft et ft_printf
+# Sources of libft
 LIBFT_SRC = $(LIBFT_DIR)/ft_strlen.c \
 			$(LIBFT_DIR)/ft_atoi.c \
 			$(LIBFT_DIR)/ft_isalpha.c \
@@ -60,6 +60,7 @@ LIBFT_SRC = $(LIBFT_DIR)/ft_strlen.c \
 			$(LIBFT_DIR)/ft_lstiter_bonus.c \
 			$(LIBFT_DIR)/ft_lstmap_bonus.c
 
+# source of src 
 FT_PRINTF_SRC = $(FT_PRINTF_DIR)/ft_printf.c
 
 SRC = $(LIBFT_SRC) $(FT_PRINTF_SRC)
@@ -79,6 +80,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@make -C $(LIBFT_DIR)
 	ar rcs $(NAME) $(OBJ)
+	@$(MAKE) wow
 
 # Compile in dir
 $(LIBFT_OBJ_DIR)/%.o: $(LIBFT_DIR)/%.c
@@ -88,6 +90,29 @@ $(LIBFT_OBJ_DIR)/%.o: $(LIBFT_DIR)/%.c
 $(FT_PRINTF_OBJ_DIR)/%.o: $(FT_PRINTF_DIR)/%.c
 	@mkdir -p $(FT_PRINTF_OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+wow:
+	@echo "\033[38;5;196m          _____                    _____                _____                   _______         \033[0m"; sleep 0.1
+	@echo "\033[38;5;202m         /\    \                  /\    \              /\    \                 /::\    \        \033[0m"; sleep 0.1
+	@echo "\033[38;5;208m        /::\    \                /::\____\            /::\    \               /::::\    \       \033[0m"; sleep 0.1
+	@echo "\033[38;5;214m       /::::\    \              /::::|   |            \:::\    \             /::::::\    \      \033[0m"; sleep 0.1
+	@echo "\033[38;5;220m      /::::::\    \            /:::::|   |             \:::\    \           /::::::::\    \     \033[0m"; sleep 0.1
+	@echo "\033[38;5;226m     /:::/\:::\    \          /::::::|   |              \:::\    \         /:::/~~\:::\    \    \033[0m"; sleep 0.1
+	@echo "\033[38;5;190m    /:::/__\:::\    \        /:::/|::|   |               \:::\    \       /:::/    \:::\    \   \033[0m"; sleep 0.1
+	@echo "\033[38;5;154m   /::::\   \:::\    \      /:::/ |::|   |               /::::\    \     /:::/    / \:::\    \  \033[0m"; sleep 0.1
+	@echo "\033[38;5;118m  /::::::\   \:::\    \    /:::/  |::|   | _____        /::::::\    \   /:::/____/   \:::\____\ \033[0m"; sleep 0.1
+	@echo "\033[38;5;82m /:::/\:::\   \:::\    \  /:::/   |::|   |/\    \      /:::/\:::\    \ |:::|    |     |:::|    |\033[0m"; sleep 0.1
+	@echo "\033[38;5;46m/:::/  \:::\   \:::\____\/:: /    |::|   /::\____\    /:::/  \:::\____\|:::|____|     |:::|    |\033[0m"; sleep 0.1
+	@echo "\033[38;5;51m\::/    \:::\  /:::/    /\::/    /|::|  /:::/    /   /:::/    \::/    / \:::\    \   /:::/    / \033[0m"; sleep 0.1
+	@echo "\033[38;5;57m \/____/ \:::\/:::/    /  \/____/ |::| /:::/    /   /:::/    / \/____/   \:::\    \ /:::/    /  \033[0m"; sleep 0.1
+	@echo "\033[38;5;93m          \::::::/    /           |::|/:::/    /   /:::/    /             \:::\    /:::/    /   \033[0m"; sleep 0.1
+	@echo "\033[38;5;129m           \::::/    /            |::::::/    /   /:::/    /               \:::\__/:::/    /    \033[0m"; sleep 0.1
+	@echo "\033[38;5;165m           /:::/    /             |:::::/    /    \::/    /                 \::::::::/    /     \033[0m"; sleep 0.1
+	@echo "\033[38;5;201m          /:::/    /              |::::/    /      \/____/                   \::::::/    /      \033[0m"; sleep 0.1
+	@echo "\033[38;5;200m         /:::/    /               /:::/    /                                  \::::/    /       \033[0m"; sleep 0.1
+	@echo "\033[38;5;199m        /:::/    /               /:::/    /                                    \::/____/        \033[0m"; sleep 0.1
+	@echo "\033[38;5;198m        \::/    /                \::/    /                                      ~~              \033[0m"; sleep 0.1
+	@echo "\033[38;5;197m         \/____/                  \/____/                                                        \033[0m"; sleep 0.1
 
 norm:
 	norminette $(SRC) $(LIBFT_SRC)
@@ -100,4 +125,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re norm
+.PHONY: all clean fclean re norm wow
