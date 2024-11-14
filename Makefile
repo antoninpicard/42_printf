@@ -6,13 +6,13 @@
 #    By: anpicard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/06 11:02:30 by anpicard          #+#    #+#              #
-#    Updated: 2024/11/14 11:09:37 by anpicard         ###   ########.fr        #
+#    Updated: 2024/11/14 11:28:37 by anpicard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Variables
 NAME = libftprintf.a
-LIBFT_DIR = libft
+LIBFT_DIR = inc/libft
 FT_PRINTF_DIR = src
 
 # Sources de libft et ft_printf
