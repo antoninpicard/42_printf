@@ -6,13 +6,16 @@
 /*   By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 11:25:38 by anpicard          #+#    #+#             */
-/*   Updated: 2024/11/14 11:26:40 by anpicard         ###   ########.fr       */
+/*   Updated: 2024/11/14 12:00:19 by anpicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-int ft_printf(const char *, ...);
+# include <stdarg.h>
+# include <stdio.h> //remind to del
 
-# endif
+int	ft_printf(const char *format, ...);
+
+#endif

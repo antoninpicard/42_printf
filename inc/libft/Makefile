@@ -6,7 +6,7 @@
 #    By: anpicard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/06 11:02:30 by anpicard          #+#    #+#              #
-#    Updated: 2024/11/14 10:23:15 by anpicard         ###   ########.fr        #
+#    Updated: 2024/11/14 11:59:11 by anpicard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ SRCS =  ft_strlen.c \
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 HEADER = libft.h
-OBJ_DIR = ../obj/libft
+OBJ_DIR = ../../obj/libft
 OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 NAME = libft.a
 

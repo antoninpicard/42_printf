@@ -6,7 +6,7 @@
 #    By: anpicard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/06 11:02:30 by anpicard          #+#    #+#              #
-#    Updated: 2024/11/14 11:28:37 by anpicard         ###   ########.fr        #
+#    Updated: 2024/11/14 11:57:03 by anpicard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ FT_PRINTF_SRC = $(FT_PRINTF_DIR)/ft_printf.c
 SRC = $(LIBFT_SRC) $(FT_PRINTF_SRC)
 OBJ_DIR = obj
 LIBFT_OBJ_DIR = $(OBJ_DIR)/libft
-FT_PRINTF_OBJ_DIR = $(OBJ_DIR)/src
+FT_PRINTF_OBJ_DIR = $(OBJ_DIR)/src_obj
 OBJ = $(LIBFT_SRC:$(LIBFT_DIR)/%.c=$(LIBFT_OBJ_DIR)/%.o) \
       $(FT_PRINTF_SRC:$(FT_PRINTF_DIR)/%.c=$(FT_PRINTF_OBJ_DIR)/%.o)
 
