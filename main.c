@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 11:25:38 by anpicard          #+#    #+#             */
-/*   Updated: 2024/11/15 11:22:56 by anpicard         ###   ########.fr       */
+/*   Created: 2024/11/15 09:22:21 by anpicard          #+#    #+#             */
+/*   Updated: 2024/11/15 11:31:39 by anpicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <stdio.h> //remind to del
-# include <unistd.h>
+int	main()
+{
+	char Z = 'Z';
+	char *string = "Je suis une string";
+	int	nb = 46464648;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(char c, int fd);
-int	ft_putstr(char *str, int fd);
-int	ft_putnbr(int n, int fd);
-int	ft_put_pointer(void *ptr);
-
-#endif
+	ft_printf("Z : %c et moi une string : %s et un decimal %d et voici une address : %p", Z, string, nb, 1);
+}
