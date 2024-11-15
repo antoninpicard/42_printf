@@ -6,7 +6,7 @@
 /*   By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 09:22:21 by anpicard          #+#    #+#             */
-/*   Updated: 2024/11/15 11:31:39 by anpicard         ###   ########.fr       */
+/*   Updated: 2024/11/15 11:45:43 by anpicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ int	main()
 	char *string = "Je suis une string";
 	int	nb = 46464648;
 
-	ft_printf("Z : %c et moi une string : %s et un decimal %d et voici une address : %p", Z, string, nb, 1);
+	printf(" %p %p ", NULL, NULL);
+	ft_printf("\nZ : %c et moi une string : %s et un decimal %d et voici une adress : %p", Z, string, nb, NULL);
 }

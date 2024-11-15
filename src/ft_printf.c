@@ -6,7 +6,7 @@
 /*   By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:00:11 by anpicard          #+#    #+#             */
-/*   Updated: 2024/11/15 11:25:44 by anpicard         ###   ########.fr       */
+/*   Updated: 2024/11/15 11:36:51 by anpicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int    ft_printf(const char *format, ...)
 {
     va_list		args;
     int			printed_chars;
-	void		*tmp;
 
     printed_chars = 0;
     va_start(args, format);
@@ -34,10 +33,7 @@ int    ft_printf(const char *format, ...)
 			else if (*format == '%')
 				printed_chars += ft_putchar('%', 1);
 			else if (*format == 'p')
-			{
-				tmp = va_arg(args, char *);
-				printed_chars += ft_put_pointer(&tmp);
-			}
+				printed_chars += ft_put_pointer(va_arg(args, void *));
         }
         else
             printed_chars += ft_putchar((char) *format, 1);

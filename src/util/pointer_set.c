@@ -6,7 +6,7 @@
 /*   By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:52:27 by anpicard          #+#    #+#             */
-/*   Updated: 2024/11/15 11:21:42 by anpicard         ###   ########.fr       */
+/*   Updated: 2024/11/15 11:45:50 by anpicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,15 @@ static int ft_put_address_count(unsigned long address)
 // Function to print the address of a pointer and return the number of characters
 int ft_put_pointer(void *ptr)
 {
-    unsigned long address = (unsigned long)ptr;
     int count = 0;
 
+	if (!ptr)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
     count += write(1, "0x", 2);
-    count += ft_put_address_count(address);
+    count += ft_put_address_count((unsigned long)ptr);
 
     return (count);
 }
