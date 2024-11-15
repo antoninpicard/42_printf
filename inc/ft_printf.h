@@ -6,7 +6,7 @@
 /*   By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 11:25:38 by anpicard          #+#    #+#             */
-/*   Updated: 2024/11/15 11:22:56 by anpicard         ###   ########.fr       */
+/*   Updated: 2024/11/15 14:53:17 by anpicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 int	ft_printf(const char *format, ...);
 int	ft_putchar(char c, int fd);
 int	ft_putstr(char *str, int fd);
-int	ft_putnbr(int n, int fd);
+int	ft_putnbr(long n, int fd);
 int	ft_put_pointer(void *ptr);
+int	ft_convert_hex(unsigned int nb, int uppercase);
 
 #endif

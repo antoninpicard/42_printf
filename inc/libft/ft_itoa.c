@@ -6,7 +6,7 @@
 /*   By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:03:32 by anpicard          #+#    #+#             */
-/*   Updated: 2024/11/12 14:39:18 by anpicard         ###   ########.fr       */
+/*   Updated: 2024/11/15 13:15:38 by anpicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_count(long nb)
 	return (count);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long int n)
 {
 	int		len;
 	int		is_neg;
