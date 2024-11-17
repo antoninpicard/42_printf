@@ -6,11 +6,11 @@
 /*   By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:49:05 by anpicard          #+#    #+#             */
-/*   Updated: 2024/11/15 14:49:12 by anpicard         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:32:07 by anpicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft/libft.h"
+#include "libft.h"
 #include "ft_printf.h"
 
 int	ft_putchar(char c, int fd)

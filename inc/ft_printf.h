@@ -6,7 +6,7 @@
 /*   By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 11:25:38 by anpicard          #+#    #+#             */
-/*   Updated: 2024/11/15 14:53:17 by anpicard         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:33:52 by anpicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <stdio.h> //remind to del
+# include <stdint.h>
 # include <unistd.h>
 
 int	ft_printf(const char *format, ...);

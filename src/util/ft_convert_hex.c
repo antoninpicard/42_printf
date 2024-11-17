@@ -6,13 +6,12 @@
 /*   By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 13:47:37 by anpicard          #+#    #+#             */
-/*   Updated: 2024/11/15 14:53:07 by anpicard         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:32:32 by anpicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft/libft.h"
+#include "libft.h"
 #include "ft_printf.h"
-#include <stdint.h>
 
 static int	ft_count(uintptr_t nb)
 {

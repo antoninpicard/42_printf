@@ -6,11 +6,11 @@
 /*   By: anpicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:00:11 by anpicard          #+#    #+#             */
-/*   Updated: 2024/11/15 14:53:58 by anpicard         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:34:13 by anpicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft/libft.h"
+#include "libft.h"
 #include "ft_printf.h"
 
 static int	handle_format(char format, va_list args)

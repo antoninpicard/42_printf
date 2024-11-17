@@ -1,68 +1,43 @@
-# Variables
+LIBFT = libft
+SRC_DIR = src/
+OBJ_DIR = obj/
+HEADERS_DIR = inc/
+HEADERS_FILE = ft_printf.h libft.h
+SRCS_FILE = ft_printf.c util/ft_convert_hex.c util/pointer_set.c util/util.c
 NAME = libftprintf.a
+
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I inc
+FLAGS = -Wall -Wextra -Werror -I
+HEADERS = $(addprefix $(HEADERS_DIR), $(HEADERS_FILE))
+SRCS = $(addprefix $(SRC_DIR), $(SRCS_FILE))
+OBJS = $(addprefix $(OBJ_DIR), $(SRCS_FILE:.c=.o))
 
-# Directories
-LIBFT_DIR = inc/libft
-FT_PRINTF_DIR = src
-UTIL_DIR = $(FT_PRINTF_DIR)/util
-
-# Source files
-FT_PRINTF_SRC = $(FT_PRINTF_DIR)/ft_printf.c
-UTIL_SRC = $(UTIL_DIR)/util.c $(UTIL_DIR)/pointer_set.c $(UTIL_DIR)/ft_convert_hex.c
-
-# Object directories
-OBJ_DIR = obj
-FT_PRINTF_OBJ_DIR = $(OBJ_DIR)/src
-UTIL_OBJ_DIR = $(OBJ_DIR)/util
-
-# Object files
-FT_PRINTF_OBJ = $(FT_PRINTF_SRC:$(FT_PRINTF_DIR)/%.c=$(FT_PRINTF_OBJ_DIR)/%.o)
-UTIL_OBJ = $(UTIL_SRC:$(UTIL_DIR)/%.c=$(UTIL_OBJ_DIR)/%.o)
-OBJ = $(FT_PRINTF_OBJ) $(UTIL_OBJ)
-
-# Rules
 all: $(NAME)
 
-$(NAME): libft $(OBJ)
-	@cp $(LIBFT_DIR)/libft.a $(NAME)
-	@ar rcs $(NAME) $(OBJ)
+$(NAME): $(OBJS)
+	@make -C $(LIBFT)
+	@cp libft/libft.a .
+	@mv libft.a $(NAME)
+	@ar rcs $(NAME) $(OBJS)
 
-# Compile ft_printf sources
-$(FT_PRINTF_OBJ_DIR)/%.o: $(FT_PRINTF_DIR)/%.c | $(FT_PRINTF_OBJ_DIR)
-	@mkdir -p $(FT_PRINTF_OBJ_DIR)
-	@$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEADERS) Makefile | $(OBJ_DIR)
+	$(CC) $(FLAGS) $(HEADERS_DIR) -c $< -o $@
 
-# Compile util sources
-$(UTIL_OBJ_DIR)/%.o: $(UTIL_DIR)/%.c | $(UTIL_OBJ_DIR)
-	@mkdir -p $(UTIL_OBJ_DIR)
-	@$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR) :
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)/util
 
-# Create object directories
-$(FT_PRINTF_OBJ_DIR):
-	@mkdir -p $@
-
-$(UTIL_OBJ_DIR):
-	@mkdir -p $@
-
-# Build libft using its own Makefile
-libft:
-	@make -C $(LIBFT_DIR)
-
-# Cleaning rules
 clean:
 	@rm -rf $(OBJ_DIR)
-	@make -C $(LIBFT_DIR) clean
+	@make clean -C $(LIBFT)
 
-fclean: clean
+fclean: clean;
+	@rm -f $(LIBFT)/libft.a
 	@rm -f $(NAME)
-	@make -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
-# Check code with norminette
 norm:
-	@norminette
+	@norminette $(SRCS) $(HEADERS) $(LIBFT)
 
-.PHONY: all clean fclean re norm libft
+.PHONY: all clean fclean re norm
